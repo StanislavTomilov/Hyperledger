@@ -1,0 +1,47 @@
+Создаем участников
+{
+  "$class": "org.example.mynetwork.Trader",
+  "tradeId": "Трэйдер1",
+  "firstName": "Джон",
+  "lastName": "Джонс"
+}
+
+{
+  "$class": "org.example.mynetwork.Trader",
+  "tradeId": "Трэйдер2",
+  "firstName": "Даниэль",
+  "lastName": "Кормье"
+}
+
+{
+  "$class": "org.example.mynetwork.Trader",
+  "tradeId": "Трэйдер3",
+  "firstName": "Стипэ",
+  "lastName": "Миочич"
+}
+
+Создаем активы
+{
+  "$class": "org.example.mynetwork.Commodity",
+  "tradingSymbol": "EMA",
+  "description": "Зерно",
+  "mainExchange": "Биржа1",
+  "quantity": 10,
+  "owner": "resource:org.example.mynetwork.Trader#Трэйдер1"
+}
+
+{
+  "$class": "org.example.mynetwork.Commodity",
+  "tradingSymbol": "CC",
+  "description": "Какао",
+  "mainExchange": "Биржа2",
+  "quantity": 80,
+  "owner": "resource:org.example.mynetwork.Trader#Трэйдер2"
+}
+
+Меняем владельца актива 
+{
+  "$class": "org.example.mynetwork.Trade",
+  "commodity": "resource:org.example.mynetwork.Commodity#EMA",
+  "newOwner": "resource:org.example.mynetwork.Trader#Трэйдер2"
+}
