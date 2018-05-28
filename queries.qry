@@ -1,0 +1,29 @@
+/** Запросы для моей торговой сети
+*/
+
+query selectCommodities {
+  description: "Отобрать все товары"
+  statement:
+      SELECT org.example.mynetwork.Commodity
+}
+
+query selectCommoditiesByExchange {
+  description: "Отобрать все товары по торговой площадке"
+  statement:
+      SELECT org.example.mynetwork.Commodity
+          WHERE (mainExchange==_$exchange)
+}
+
+query selectCommoditiesByOwner {
+  description: "Отобрать все товары по владельцу"
+  statement:
+      SELECT org.example.mynetwork.Commodity
+          WHERE (owner == _$owner)
+}
+
+query selectCommoditiesWithHighQuantity {
+  description: "Отобрать все товары в больших количествах"
+  statement:
+      SELECT org.example.mynetwork.Commodity
+          WHERE (quantity > 60)
+}
